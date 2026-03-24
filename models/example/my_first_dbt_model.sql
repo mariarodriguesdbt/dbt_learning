@@ -4,7 +4,7 @@
     Did you know that you can also configure models directly within SQL files?
     This will override configurations stated in dbt_project.yml
 
-    Try changing "table" to "view" below test CI job promotion
+    Try changing "table" to "view" below test CI job new changes
 */
 
 {{ config(materialized='table') }}
