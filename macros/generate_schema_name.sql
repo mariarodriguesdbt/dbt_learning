@@ -1,16 +1,12 @@
 {% macro generate_schema_name(custom_schema_name, node) -%}
-
     {%- set default_schema = target.schema -%}
 
-    {# In Production, use only the custom schema name if it exists #}
-    {%- if target.name == 'prod' and custom_schema_name is not none -%}
+    {# If a custom schema is provided, use ONLY that name and ignore the target #}
+    {%- if custom_schema_name is not none -%}
         {{ custom_schema_name | trim }}
-
-    {# In Dev or if no custom schema is provided, use default logic #}
-    {%- elif custom_schema_name is none -%}
-        {{ default_schema }}
+    
+    {# If no custom schema, just use the default (e.g., PROD) #}
     {%- else -%}
-        {{ default_schema }}_{{ custom_schema_name | trim }}
+        {{ default_schema }}
     {%- endif -%}
-
 {%- endmacro %}
