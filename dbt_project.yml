@@ -40,4 +40,5 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
-      +schema: marketing
+      +database: "{{ env_var('DBT_DATABASENAME') }}"
+      +schema: "{{ env_var('DBT_SCHEMANAME') }}"
