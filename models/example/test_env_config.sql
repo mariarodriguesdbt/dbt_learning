@@ -7,7 +7,7 @@
 /* 
    This model doesn't need any source tables. 
    It just returns the values of your environment variables 
-   so you can verify they are workingdd.
+   so you can verify they are workingdd.ddd
 */
 
 select
